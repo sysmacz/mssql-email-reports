@@ -23,15 +23,11 @@ This project provides an automated solution to:
 ## Project Structure
 
 ```
-SQL-Reports/
+Reports/
 ├── run-report.ps1                    # Main report execution script
 ├── encode_password.ps1               # Utility to encrypt SQL credentials
-├── config-report-sla_day.psd1        # Day report configuration
-├── config-report-sla_day.sql         # Day report SQL query
-├── config-report-sla_day.xml         # Day report metadata (optional)
-├── config-report-sla_month.psd1      # Month report configuration
-├── config-report-sla_month.sql       # Month report SQL query
-├── config-report-sla_month.xml       # Month report metadata (optional)
+├── config.psd1.example               # Example report configuration
+├── example-query.sql                 # Example report SQL query
 ├── secrets/                          # Directory for encrypted credentials
 └── README.md                         # This file
 ```
@@ -167,7 +163,7 @@ mkdir "D:\Reports\secrets"
 When prompted, enter the SQL server password.
 
 ### 3. Create Configuration Files
-Copy and customize `config-report-sla_day.psd1` and `config-report-sla_month.psd1` with your:
+Copy and customize `config.psd1` with your:
 - SQL Server connection details
 - Database and query file paths
 - Output folder
