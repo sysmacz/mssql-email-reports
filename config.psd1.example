@@ -1,0 +1,38 @@
+@{
+  Sql = @{
+    ServerInstance = "sqlserver.example.com,1433"
+    Database       = "YourDatabaseName"
+    QueryFile      = "example-query.sql"
+
+    # SqlCredentialPath = "D:\secrets\sql.cred.xml"
+	SqlUser         = "sqluser"
+    SqlPasswordFile = "D:\Reports\secrets\sql.pass.bin"
+
+    # Secure defaults: if your SQL instance requires TLS, set Encrypt=$true and TrustServerCertificate=$true
+    Encrypt = $false
+    TrustServerCertificate = $true
+
+    ConnectTimeoutSeconds  = 15
+    CommandTimeoutSeconds  = 120
+  }
+
+  Output = @{
+    Folder = "D:\Reports\out"
+  }
+
+  Report = @{
+    Title = "Daily report"
+    PeriodLabel = "This is a summary of the operator's interactions for yesterday."
+  }
+
+  Mail = @{
+    SmtpServer = "smtp.example.com"
+    Port       = 25
+    UseSsl     = $false
+
+    From       = "reports@example.com"
+    To         = @("recipient1@example.com","recipient2@example.com")
+    Cc         = @("admin@example.com","manager@example.com")
+    SubjectPrefix = "[Reports] Daily alerts"
+  }
+}
